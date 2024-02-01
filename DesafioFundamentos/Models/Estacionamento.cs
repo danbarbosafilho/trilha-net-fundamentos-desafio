@@ -52,13 +52,12 @@ namespace DesafioFundamentos.Models
                     cliente.TipoCliente = "Simples";
                     break;
             }
+            
             cliente.Nome = nomeCliente;
-
             cliente.PlacaVeiculo = placaVeiculo;
-
             clientes.Add(placaVeiculo, cliente);
-
             veiculos.Add(placaVeiculo);
+
         }
 
         public void RemoverVeiculo()
@@ -78,7 +77,8 @@ namespace DesafioFundamentos.Models
                 );
                 int minutos = Convert.ToInt32(Console.ReadLine());
 
-                decimal precoBase = precoInicial + (precoPorHora * horas) + (precoPorHora / 60 * minutos);
+                decimal precoBase =
+                    precoInicial + (precoPorHora * horas) + (precoPorHora / 60 * minutos);
 
                 Cliente cliente = clientes[placa];
 
