@@ -12,7 +12,6 @@ namespace DesafioFundamentos.Models
         public string TipoCliente { get; set; }
         public decimal Desconto { get; set; }
 
-        // Método abstrato para calcular o preço com desconto
         public abstract decimal CalcularPrecoComDesconto(decimal precoBase);
     }
 }

@@ -24,10 +24,8 @@ namespace DesafioFundamentos.Models
             Console.WriteLine("Digite o tipo de cliente (Simples, Gestante, PCD, Idoso):");
             string tipoClienteInput = Console.ReadLine();
 
-            // Converte o tipo de cliente para uppercase para facilitar comparação
             string tipoCliente = tipoClienteInput.ToUpper();
 
-            // Instancia o cliente com base no tipo informado
             Cliente cliente;
 
             switch (tipoCliente)
@@ -51,18 +49,15 @@ namespace DesafioFundamentos.Models
                 default:
                     Console.WriteLine("Tipo de cliente inválido. Utilizando cliente simples.");
                     cliente = new ClienteSimples(); // Se o tipo for inválido, atribui o cliente simples por padrão
+                    cliente.TipoCliente = "Simples";
                     break;
             }
-            // Define o nome do cliente
             cliente.Nome = nomeCliente;
 
-            // Define a placa do veículo para o cliente
             cliente.PlacaVeiculo = placaVeiculo;
 
-            // Adiciona o cliente ao dicionário de clientes
             clientes.Add(placaVeiculo, cliente);
 
-            // Adiciona a placa do veículo à lista de veículos
             veiculos.Add(placaVeiculo);
         }
 
@@ -85,13 +80,10 @@ namespace DesafioFundamentos.Models
 
                 decimal precoBase = precoInicial + (precoPorHora * horas) + (precoPorHora / 60 * minutos);
 
-                // Obtém o cliente associado à placa
                 Cliente cliente = clientes[placa];
 
-                // Calcula o preço com desconto utilizando o método da classe Cliente
                 decimal precoComDesconto = cliente.CalcularPrecoComDesconto(precoBase);
 
-                // Remover a placa digitada da lista de veículos e do dicionário de clientes
                 veiculos.Remove(placa);
                 clientes.Remove(placa);
 
@@ -109,12 +101,10 @@ namespace DesafioFundamentos.Models
 
         public void ListarVeiculos()
         {
-            // Verifica se há clientes no estacionamento
             if (clientes.Any())
             {
                 Console.WriteLine("Os veículos estacionados são:");
 
-                // Itera sobre a lista de veículos e exibe cada placa
                 foreach (var cliente in clientes.Values)
                 {
                     Console.WriteLine(

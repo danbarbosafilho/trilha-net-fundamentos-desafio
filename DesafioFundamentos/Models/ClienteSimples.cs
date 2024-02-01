@@ -9,7 +9,6 @@ namespace DesafioFundamentos.Models
     {
         public override decimal CalcularPrecoComDesconto(decimal precoBase)
         {
-            // Cliente simples não possui desconto
             return precoBase;
         }
     }
