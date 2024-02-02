@@ -73,7 +73,7 @@ namespace DesafioFundamentos.Models
                 int horas = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine(
-                    $"Além da hora informada ({horas}h), digite a quantidade de minutos restantes (canho tenha)):"
+                    $"Além da hora informada ({horas}h), digite a quantidade de minutos restantes (canho haja):"
                 );
                 int minutos = Convert.ToInt32(Console.ReadLine());
 
