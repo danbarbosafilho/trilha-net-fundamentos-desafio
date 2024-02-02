@@ -21,6 +21,14 @@ namespace DesafioFundamentos.Models
             Console.WriteLine("Digite a placa do veículo:");
             string placaVeiculo = Console.ReadLine().ToUpper();
 
+            if (veiculos.Contains(placaVeiculo))
+            {
+                Console.WriteLine(
+                    "Erro: Esta placa já está em uso. Por favor, insira uma placa válida."
+                );
+                return; // Retorna para evitar que o código continue após o tratamento do erro
+            }
+
             Console.WriteLine("Digite o tipo de cliente (Simples, Gestante, PCD, Idoso):");
             string tipoClienteInput = Console.ReadLine();
 
@@ -52,12 +60,11 @@ namespace DesafioFundamentos.Models
                     cliente.TipoCliente = "Simples";
                     break;
             }
-            
+
             cliente.Nome = nomeCliente;
             cliente.PlacaVeiculo = placaVeiculo;
             clientes.Add(placaVeiculo, cliente);
             veiculos.Add(placaVeiculo);
-
         }
 
         public void RemoverVeiculo()
