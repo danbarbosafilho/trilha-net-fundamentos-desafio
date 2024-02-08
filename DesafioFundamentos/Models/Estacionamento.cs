@@ -26,7 +26,7 @@ namespace DesafioFundamentos.Models
                 Console.WriteLine(
                     "Erro: Esta placa já está em uso. Por favor, insira uma placa válida."
                 );
-                return; // Retorna para evitar que o código continue após o tratamento do erro
+                return; 
             }
 
             Console.WriteLine("Digite o tipo de cliente (Simples, Gestante, PCD, Idoso):");
@@ -56,7 +56,7 @@ namespace DesafioFundamentos.Models
                     break;
                 default:
                     Console.WriteLine("Tipo de cliente inválido. Utilizando cliente simples.");
-                    cliente = new ClienteSimples(); // Se o tipo for inválido, atribui o cliente simples por padrão
+                    cliente = new ClienteSimples(); 
                     cliente.TipoCliente = "Simples";
                     break;
             }
